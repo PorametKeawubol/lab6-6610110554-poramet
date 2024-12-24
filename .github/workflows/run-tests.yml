@@ -8,7 +8,6 @@ on:
 
 jobs:
   build-and-test:
-    needs: build
     runs-on: ubuntu-24.04
 
     steps:
@@ -22,16 +21,3 @@ jobs:
       run: |
         g++ -std=c++14 -o tests test/test_poramet.cpp
         ./tests
-
-  deploy:
-    needs: build-and-test
-    runs-on: ubuntu-24.04
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Deploy to Server
-      run: |
-        echo "Starting deployment process..."
-        echo "Deployment complete!"

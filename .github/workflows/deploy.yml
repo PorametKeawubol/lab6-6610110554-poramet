@@ -7,8 +7,41 @@ on:
       - completed
 
 jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install g++
+      run: sudo apt-get update && sudo apt-get install -y g++
+
+    - name: Compile poramet.cpp
+      run: g++ -o poramet poramet.cpp
+
+    - name: Run the program
+      run: ./poramet
+
+  test:
+    runs-on: ubuntu-24.04
+    needs: build 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: sudo apt update && sudo apt install -y g++
+
+    - name: Build and run test
+      run: |
+        g++ -std=c++14 -o tests test/test_poramet.cpp
+        ./tests
+
   deploy:
     runs-on: ubuntu-24.04
+    needs: test 
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
