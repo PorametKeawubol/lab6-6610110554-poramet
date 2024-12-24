@@ -23,7 +23,7 @@ int main()
         "I am currently studying at Prince of Songkla University, majoring in Computer Engineering.\n"
         "My student ID is 6610110554.\n"
         "This work is submitted for the SDA 240-229 course, section 01.\n"
-        "Thank you!!";
+        "Thank you!";
 
     int delayMs = 50;
 
