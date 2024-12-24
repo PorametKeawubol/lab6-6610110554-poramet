@@ -19,8 +19,8 @@ jobs:
 
     - name: Build and run test
       run: |
-        g++ -std=c++14 -o test test/test_poramet.cpp
-        ./test
+        g++ -std=c++14 -o tests test/test_poramet.cpp
+        ./tests
 
   deploy:
     needs: build-and-test
