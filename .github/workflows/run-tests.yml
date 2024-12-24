@@ -19,5 +19,5 @@ jobs:
 
     - name: Build and run tests
       run: |
-        g++ -std=c++11 -o test tests/test_poramet.cpp
+        g++ -std=c++13 -o test tests/test_poramet.cpp
         ./test
