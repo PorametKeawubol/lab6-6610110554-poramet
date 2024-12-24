@@ -17,11 +17,12 @@ jobs:
     - name: Install dependencies
       run: sudo apt update && sudo apt install -y g++
 
-    - name: Build and run tests
+    - name: Build and run test
       run: |
-        g++ -std=c++14 -o tests test/test_poramet.cpp
-        ./tests
- deploy:
+        g++ -std=c++14 -o test test/test_poramet.cpp
+        ./test
+
+  deploy:
     needs: build-and-test
     runs-on: ubuntu-24.04
 
