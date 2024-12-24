@@ -1,0 +1,23 @@
+name: Compile and Run
+
+on:
+  push:
+    paths:
+      - poramet.cpp
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install g++
+      run: sudo apt-get update && sudo apt-get install -y g++
+
+    - name: Compile poramet.cpp
+      run: g++ -o poramet poramet.cpp
+
+    - name: Run the program
+      run: ./poramet
