@@ -2,8 +2,8 @@ name: Compile and Run
 
 on:
   push:
-    paths:
-      - poramet.cpp
+    branches:
+      - main
 
 jobs:
   build:
@@ -21,4 +21,3 @@ jobs:
 
     - name: Run the program
       run: ./poramet
-  
